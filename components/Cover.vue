@@ -2,7 +2,7 @@
   <div id="cover-page" class="w-full">
     <div
       id="cover-main"
-      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
+      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 items-center justify-center cover"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
 
@@ -38,19 +38,18 @@
         <h4 class="mt-4">
           Mohon maaf apabila terdapat kesalahan pada penulisan nama/gelar
         </h4>
-      </div>
-
-      <div
-        v-if="!opened"
-        id="button-open"
-        class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-16 flex justify-center"
-        @click.prevent="$emit('onOpen')"
-      >
-        <button
-          class="bg-dark-accent-primary text-dark-basic-primary rounded-md py-2 px-4 capitalize text-sm"
+        <div
+          v-if="!opened"
+          id="button-open"
+          class="z-20 flex justify-center mt-4 lg:mt-12"
+          @click.prevent="$emit('onOpen')"
         >
-          <fa :icon="['fas', 'envelope-open']" />&nbsp;&nbsp;buka undangan
-        </button>
+          <button
+            class="bg-dark-accent-primary text-dark-basic-primary rounded-md py-2 px-4 capitalize text-sm"
+          >
+            <fa :icon="['fas', 'envelope-open']" />&nbsp;&nbsp;buka undangan
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -121,7 +120,7 @@ export default {
           .classList.add('justify-center', 'items-center')
 
         document.getElementById('cover-content').classList.remove('mt-8')
-        document.getElementById('button-open').classList.add('absolute')
+        // document.getElementById('button-open').classList.add('absolute')
       }
       // if (e.matches) {
       //   cover.style.height = window.innerHeight + 'px'
