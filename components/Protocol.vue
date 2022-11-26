@@ -1,0 +1,86 @@
+<template>
+  <div class="w-full min-h-70vh bg-white py-20">
+    <div
+      class="flex flex-col gap-8 justify-center items-center mb-12 px-4 text-center"
+    >
+      <div class="font-cookie text-5xl text-green-600">
+        Protokol Kesehatan & Anjuran
+      </div>
+      <div class="font-semibold">
+        Guna mencegah penyebaran Covid-19, diharapkan bagi tamu undangan untuk
+        mematuhi Protokol Kesehatan di bawah ini :
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div
+        v-for="(list, i) in lists"
+        :key="i"
+        class="flex flex-col justify-around items-center gap-2 py-4 px-2 text-center"
+      >
+        <div
+          class="w-20 h-20 rounded-full inline-flex justify-center align-middle"
+        >
+          <img
+            class="rounded-full"
+            :src="`${assetsURL}images/wedding/protocols/${list.icon}`"
+            alt=""
+          />
+        </div>
+        <div class="font-bold text-base text-yellow-700">
+          {{ list.title }}
+        </div>
+        <div class="text-xs text-gray-600">{{ list.desc }}</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'VProtocol',
+
+  data() {
+    return {
+      assetsURL: 'https://res.cloudinary.com/devaraeko/image/upload/'
+    }
+  },
+
+  computed: {
+    lists() {
+      return [
+        {
+          title: 'Gunakan Masker',
+          icon: 'use-masker.png',
+          desc: 'Pakai masker sebelum memasuki gedung acara'
+        },
+        {
+          title: 'Jaga Jarak',
+          icon: 'social-distance.png',
+          desc: 'Jaga jarak minimal 2m dengan orang lain'
+        },
+        {
+          title: 'Gunakan Handsanitizer',
+          icon: 'use-handsanitizer.png',
+          desc: 'Gunakanlah handsanitizer secara berkala'
+        },
+        {
+          title: 'Cuci Tangan',
+          icon: 'hand-wash.png',
+          desc: 'Cuci tangan yang bersih'
+        },
+        {
+          title: 'Hindari Kerumunan',
+          icon: 'avoid-crowd.png',
+          desc: 'Hindari kerumunan untuk mencegah penyebaran covid'
+        },
+        {
+          title: 'Tidak Bersalaman',
+          icon: 'avoid-handshake.png',
+          desc: 'Diusahakan untuk tidak bersalaman'
+        }
+      ]
+    }
+  }
+}
+</script>
