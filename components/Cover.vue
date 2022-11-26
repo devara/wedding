@@ -1,12 +1,14 @@
 <template>
   <div id="cover-page" class="w-full">
     <div
+      id="cover-main"
       class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
 
       <div
-        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-sm md:text-base mt-9 md:mt-0"
+        id="cover-content"
+        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-xs md:text-base mt-8 md:mt-0"
       >
         <div class="mb-8">
           <nuxt-img
@@ -15,8 +17,8 @@
             loading="lazy"
           />
         </div>
-        <h4 class="font-dancing text-2xl">The Wedding of</h4>
-        <h1 class="py-6 font-cookie text-5xl">Lisda & Deva</h1>
+        <h4 class="font-dancing text-xl md:text-2xl">The Wedding of</h4>
+        <h1 class="font-cookie text-5xl mb-4">Lisda & Deva</h1>
         <div class="mb-2">
           Hadir secara virtual melalui siaran langsung instagram:
         </div>
@@ -41,7 +43,7 @@
       <div
         v-if="!opened"
         id="button-open"
-        class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-20 flex justify-center"
+        class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-16 flex justify-center"
         @click.prevent="$emit('onOpen')"
       >
         <button
@@ -80,8 +82,10 @@ export default {
   mounted() {
     this.calculateHeight()
 
-    const portrait = window.matchMedia('(orientation: portrait)')
-    portrait.addEventListener('change', this.recalculateHeight, true)
+    // const portrait = window.matchMedia('(orientation: portrait)')
+    // portrait.addEventListener('change', this.recalculateHeight, true)
+
+    window.addEventListener('resize', this.recalculateHeight, true)
   },
 
   methods: {
@@ -91,25 +95,41 @@ export default {
 
     calculateHeight() {
       const cover = document.getElementById('cover-page')
-      if (window.innerHeight > 600) {
+      if (window.innerHeight > 550) {
         cover.style.height = '100vh'
+        document
+          .getElementById('cover-main')
+          .classList.add('justify-center', 'items-center')
+
+        document.getElementById('cover-content').classList.remove('mt-8')
 
         setTimeout(() => {
           cover.style.height = window.innerHeight + 'px'
-        }, 500)
+        }, 400)
       } else {
-        cover.style.height = '650px'
+        cover.style.height = '600px'
         document.getElementById('button-open').classList.remove('absolute')
       }
     },
 
     recalculateHeight(e) {
       const cover = document.getElementById('cover-page')
-      if (e.matches) {
+      if (window.innerHeight > 550) {
         cover.style.height = window.innerHeight + 'px'
-      } else if (!e.matches && window.innerHeight > 600) {
-        cover.style.height = window.innerHeight + 'px'
+        document
+          .getElementById('cover-main')
+          .classList.add('justify-center', 'items-center')
+
+        document.getElementById('cover-content').classList.remove('mt-8')
+        document.getElementById('button-open').classList.add('absolute')
       }
+      // if (e.matches) {
+      //   cover.style.height = window.innerHeight + 'px'
+      //   document.getElementById('button-open').classList.add('absolute')
+      // } else if (!e.matches && window.innerHeight > 550) {
+      //   cover.style.height = window.innerHeight + 'px'
+      //   document.getElementById('button-open').classList.add('absolute')
+      // }
     }
   }
 }
