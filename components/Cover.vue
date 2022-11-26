@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full cover-page">
+  <div id="cover-page" class="w-full">
     <div
-      class="relative w-full h-screen bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
+      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
 
       <div
-        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-sm md:text-base mt-10 md:mt-0"
+        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-sm md:text-base mt-9 md:mt-0"
       >
         <div class="mb-8">
           <nuxt-img
@@ -40,6 +40,7 @@
 
       <div
         v-if="!opened"
+        id="button-open"
         class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-20 flex justify-center"
         @click.prevent="$emit('onOpen')"
       >
@@ -76,9 +77,33 @@ export default {
     }
   },
 
+  mounted() {
+    this.calculateHeight()
+
+    const portrait = window.matchMedia('(orientation: portrait)')
+    portrait.addEventListener('change', this.recalculateHeight, true)
+  },
+
   methods: {
     toInstagram() {
       window.open('https://instagram.com/lisdamei', '_blank')
+    },
+
+    calculateHeight() {
+      const cover = document.getElementById('cover-page')
+      if (window.innerHeight > 600) {
+        cover.style.height = window.innerHeight + 'px'
+      } else {
+        cover.style.height = '650px'
+        document.getElementById('button-open').classList.remove('absolute')
+      }
+    },
+
+    recalculateHeight(e) {
+      if (e.matches) {
+        const cover = document.getElementById('cover-page')
+        cover.style.height = window.innerHeight + 'px'
+      }
     }
   }
 }
