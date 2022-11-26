@@ -16,9 +16,13 @@
         <div
           class="w-40 h-40 rounded-full inline-flex justify-center align-middle mb-2"
         >
-          <img class="rounded-full" :src="pengantin.photo" alt="" />
+          <nuxt-img
+            class="rounded-full"
+            :src="pengantin.photo"
+            loading="lazy"
+          />
         </div>
-        <div class="font-dancing font-medium text-4xl text-pink-500">
+        <div class="font-cookie font-medium text-4xl text-pink-500">
           {{ pengantin.name }}
         </div>
         <div class="flex items-center justify-center w-full my-4">
@@ -36,24 +40,18 @@
 export default {
   name: 'VGroomBride',
 
-  data() {
-    return {
-      assetsURL: 'https://res.cloudinary.com/devaraeko/image/upload/'
-    }
-  },
-
   computed: {
     pengantins() {
       return [
         {
           name: 'Lisda Meilinda',
-          photo: `${this.assetsURL}images/wedding/lisda.jpg`,
+          photo: 'f_jpg/images/wedding/lisda.jpg',
           gender: 'Wanita',
           parent: 'Putri pertama Bapak Samsudin & Ibu Warsiati'
         },
         {
           name: 'Devara Eko Katon Mahardika',
-          photo: `${this.assetsURL}images/wedding/deva.jpg`,
+          photo: 'f_jpg/images/wedding/deva.jpg',
           gender: 'Laki-laki',
           parent: 'Putra pertama Bapak Sungkowo & Ibu Sumilah'
         }

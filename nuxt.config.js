@@ -38,7 +38,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,7 +49,8 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-webfontloader',
-    '@nuxt/image'
+    '@nuxt/image',
+    ['cookie-universal-nuxt', { sameSite: 'None', secure: true }]
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -73,6 +75,25 @@ export default {
 
   image: {
     // Options
+    provider: 'cloudinary',
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/devaraeko/image/upload/'
+    }
+  },
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: [
+        'faEnvelopeOpen',
+        'faClock',
+        'faCalendar',
+        'faLocationDot',
+        'faPlay',
+        'faPause'
+      ],
+      brands: ['faInstagram']
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

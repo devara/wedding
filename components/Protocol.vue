@@ -21,10 +21,10 @@
         <div
           class="w-20 h-20 rounded-full inline-flex justify-center align-middle"
         >
-          <img
+          <nuxt-img
             class="rounded-full"
-            :src="`${assetsURL}images/wedding/protocols/${list.icon}`"
-            alt=""
+            :src="`w_80/images/wedding/protocols/${list.icon}`"
+            loading="lazy"
           />
         </div>
         <div class="font-bold text-base text-yellow-700">
@@ -39,12 +39,6 @@
 <script>
 export default {
   name: 'VProtocol',
-
-  data() {
-    return {
-      assetsURL: 'https://res.cloudinary.com/devaraeko/image/upload/'
-    }
-  },
 
   computed: {
     lists() {
