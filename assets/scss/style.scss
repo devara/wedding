@@ -1,17 +1,27 @@
 html {
-  min-height: 100%; /* Look, it's not fixed anymore! */
-
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
 }
 
 body {
-  flex-grow: 1;
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
 }
 
-.cover {
-  background-image: url(https://res.cloudinary.com/devaraeko/image/upload/w_800/images/wedding/wedding-cover.jpg);
+.cover-page {
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  .cover {
+    background-image: url(https://res.cloudinary.com/devaraeko/image/upload/w_800/images/wedding/wedding-cover.jpg);
+  }
 }
+
 
 .cover-event {
   background-image: url(https://res.cloudinary.com/devaraeko/image/upload/w_800/images/wedding/wedding-cover-2.jpg);

@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-screen min-h-screen">
+  <div class="w-full cover-page">
     <div
-      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
+      class="relative w-full h-screen bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
 
