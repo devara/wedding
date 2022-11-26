@@ -1,12 +1,12 @@
 <template>
   <div class="w-full h-screen">
     <div
-      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 items-center justify-center cover"
+      class="relative w-full h-full bg-cover bg-center flex flex-col gap-4 md:items-center md:justify-center cover"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
 
       <div
-        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-sm md:text-base"
+        class="z-20 flex flex-col items-center justify-center text-dark-basic-primary px-6 text-center text-sm md:text-base mt-10 md:mt-0"
       >
         <div class="mb-8">
           <nuxt-img
@@ -29,7 +29,7 @@
 
         <h4 class="mt-8 subtitle-1">Kepada Bapak/Ibu/Saudara/i</h4>
         <h3
-          class="mt-4 pb-2 m-auto dear-person capitalize border-b w-full max-w-xs"
+          class="mt-4 pb-2 m-auto capitalize border-b w-full max-w-xs font-semibold"
         >
           {{ person }}
         </h3>
@@ -40,7 +40,7 @@
 
       <div
         v-if="!opened"
-        class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-8 flex justify-center"
+        class="z-20 absolute w-1/2 m-auto inset-x-0 bottom-20 flex justify-center"
         @click.prevent="$emit('onOpen')"
       >
         <button
