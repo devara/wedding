@@ -92,7 +92,11 @@ export default {
     calculateHeight() {
       const cover = document.getElementById('cover-page')
       if (window.innerHeight > 600) {
-        cover.style.height = window.innerHeight + 'px'
+        cover.style.height = '100vh'
+
+        setTimeout(() => {
+          cover.style.height = window.innerHeight + 'px'
+        }, 500)
       } else {
         cover.style.height = '650px'
         document.getElementById('button-open').classList.remove('absolute')
@@ -100,8 +104,10 @@ export default {
     },
 
     recalculateHeight(e) {
+      const cover = document.getElementById('cover-page')
       if (e.matches) {
-        const cover = document.getElementById('cover-page')
+        cover.style.height = window.innerHeight + 'px'
+      } else if (!e.matches && window.innerHeight > 600) {
         cover.style.height = window.innerHeight + 'px'
       }
     }
