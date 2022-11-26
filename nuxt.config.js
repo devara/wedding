@@ -100,7 +100,8 @@ export default {
   build: {
     postcss: {
       plugins: {
-        tailwindcss: {}
+        tailwindcss: {},
+        'postcss-custom-properties': false
       }
     }
   }
