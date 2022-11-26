@@ -90,7 +90,12 @@ export default {
         'faCalendar',
         'faLocationDot',
         'faPlay',
-        'faPause'
+        'faPause',
+        'faGift',
+        'faImage',
+        'faHeart',
+        'faCopy',
+        'faMapLocationDot'
       ],
       brands: ['faInstagram']
     }

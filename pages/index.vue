@@ -7,6 +7,7 @@
       <Events />
       <Protocol />
       <Galeries />
+      <Gift />
       <Quotes />
       <Thankyou />
 
@@ -24,6 +25,8 @@
           src="https://docs.google.com/uc?export=download&id=1GUrctVYFWLubNBvS-TC9F3R2tIoLfH3U"
         ></audio>
       </div>
+
+      <Sidenav />
     </template>
   </div>
 </template>

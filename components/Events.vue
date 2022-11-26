@@ -1,6 +1,8 @@
 <template>
-  <div class="w-full">
-    <div class="cover-event relative flex bg-cover bg-center min-h-70vh py-16">
+  <div id="event" class="w-full">
+    <div
+      class="cover-event relative flex flex-col justify-center items-center bg-cover bg-center min-h-70vh py-16"
+    >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
       <div
         class="z-20 flex flex-col justify-center items-center w-full text-dark-basic-primary px-2 lg:px-6 text-center"
@@ -39,6 +41,15 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="z-20 text-dark-basic-primary mt-12">
+        <button
+          class="py-2 px-4 bg-dark-accent-primary rounded-md"
+          @click.prevent="toLocation"
+        >
+          Menuju lokasi Pernikahan &nbsp;
+          <fa :icon="['fas', 'map-location-dot']" />
+        </button>
       </div>
     </div>
   </div>
@@ -87,6 +98,12 @@ export default {
           ]
         }
       ]
+    }
+  },
+
+  methods: {
+    toLocation() {
+      window.open('https://goo.gl/maps/hFTYUvkkgPB7TUG26', '_blank')
     }
   }
 }
