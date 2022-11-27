@@ -85,7 +85,7 @@ export default {
           details: [
             {
               icon: ['fas', 'clock'],
-              desc: '10.00 WIB - selesai'
+              desc: '11.00 WIB - selesai'
             },
             {
               icon: ['fas', 'calendar'],
