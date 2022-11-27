@@ -13,8 +13,61 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {
+        hid: 'title',
+        name: 'title',
+        content: 'Lisda & Deva - Wedding Invitation'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'deva lisda, devara eko, lisda meilinda, wedding, digital wedding, wedding website, wedding invitation'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Undangan digital untuk pernikahan Lisda Meilinda dan Devara Eko Katon Mahardika'
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://lisda.devaraeko.com/' },
+      {
+        property: 'og:site_name',
+        content: 'Lisda & Deva - Wedding Invitation'
+      },
+      { property: 'og:title', content: 'Lisda & Deva - Wedding Invitation' },
+      {
+        property: 'og:description',
+        content:
+          'Undangan digital untuk pernikahan Lisda Meilinda dan Devara Eko Katon Mahardika'
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://res.cloudinary.com/devaraeko/image/upload/images/wedding/web-cover.jpg'
+      },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:url', content: 'https://lisda.devaraeko.com/' },
+      {
+        property: 'twitter:title',
+        content: 'Lisda & Deva - Wedding Invitation'
+      },
+      {
+        property: 'twitter:description',
+        content:
+          'Undangan digital untuk pernikahan Lisda Meilinda dan Devara Eko Katon Mahardika'
+      },
+      {
+        property: 'twitter:image',
+        content:
+          'https://res.cloudinary.com/devaraeko/image/upload/images/wedding/web-cover.jpg'
+      },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content: 'Lisda & Deva - Wedding Invitation'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
