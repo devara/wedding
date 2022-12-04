@@ -20,11 +20,11 @@
           <fa v-if="play" :icon="['fas', 'pause']" :size="`lg`" />
           <fa v-else :icon="['fas', 'play']" :size="`lg`" />
         </div>
-        <audio
+        <!-- <audio
           id="song"
           loop
           src="https://docs.google.com/uc?export=download&id=1e3RhVzT8dhtfLKM208zkOcHY0plwEGZg"
-        ></audio>
+        ></audio> -->
       </div>
 
       <Sidenav />
@@ -39,7 +39,8 @@ export default {
   data() {
     return {
       open: false,
-      play: false
+      play: false,
+      music: null
     }
   },
 
@@ -52,6 +53,9 @@ export default {
   methods: {
     openInvitation() {
       this.open = true
+      this.music = new Audio(
+        require('@/assets/music/Guy_Sebastian-Angels_Brought_Me_Here.mp3')
+      )
       this.$nextTick(() => {
         setTimeout(() => {
           const element = document.querySelector('#pengantin')
@@ -64,9 +68,10 @@ export default {
     },
 
     onOffMusic() {
-      this.play
-        ? document.getElementById('song').play()
-        : document.getElementById('song').pause()
+      // this.play
+      //   ? document.getElementById('song').play()
+      //   : document.getElementById('song').pause()
+      this.play ? this.music.play() : this.music.pause()
     }
   }
 }
