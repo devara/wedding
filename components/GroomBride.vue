@@ -1,7 +1,7 @@
 <template>
-  <div id="pengantin" class="w-full py-20 px-4 bg-gray-200">
+  <div id="pengantin" class="w-full py-20 px-4 bg-gray-300">
     <div class="flex flex-col gap-6 justify-center items-center mb-16">
-      <div class="font-cookie text-4xl md:text-5xl text-center text-green-600">
+      <div class="font-cookie text-4xl md:text-5xl text-center text-yellow-800">
         Assalamualaikum Wr. Wb
       </div>
       <div class="text-center md:w-4/5 lg:w-1/2">
@@ -17,7 +17,7 @@
           class="w-40 h-40 rounded-full inline-flex justify-center align-middle mb-2"
         >
           <nuxt-img
-            class="rounded-full"
+            class="rounded-full shadow-xl"
             :src="pengantin.photo"
             loading="lazy"
           />

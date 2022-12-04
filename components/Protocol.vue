@@ -3,12 +3,12 @@
     <div
       class="flex flex-col gap-8 justify-center items-center mb-12 px-4 text-center"
     >
-      <div class="font-cookie text-5xl text-green-600">
+      <div class="font-cookie text-5xl text-yellow-800">
         Protokol Kesehatan & Anjuran
       </div>
       <div class="font-semibold">
-        Guna mencegah penyebaran Covid-19, diharapkan bagi tamu undangan untuk
-        mematuhi Protokol Kesehatan di bawah ini :
+        Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran Covid-19,
+        Maka diharapkan Bapak/Ibu/Saudara/Sahabat/i tamu undangan untuk :
       </div>
     </div>
 
@@ -30,7 +30,7 @@
         <div class="font-bold text-base text-yellow-700">
           {{ list.title }}
         </div>
-        <div class="text-xs text-gray-600">{{ list.desc }}</div>
+        <div class="text-sm text-gray-600">{{ list.desc }}</div>
       </div>
     </div>
   </div>

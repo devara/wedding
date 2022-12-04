@@ -8,7 +8,7 @@
       <div
         class="z-20 flex flex-col justify-center items-center gap-4 text-dark-basic-primary text-center"
       >
-        <div>
+        <div class="px-4">
           Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
           Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
           <br />Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.

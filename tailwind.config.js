@@ -10,7 +10,7 @@ module.exports = {
       fontFamily: {
         dancing: ['Dancing Script', 'cursive'],
         cookie: ['Cookie', 'cursive'],
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Bitter', 'serif']
       },
       fontSize: {
         '2rem': [

@@ -117,11 +117,15 @@ export default {
   // Web Fonts Load
   webfontloader: {
     google: {
-      families: ['Dancing+Script:400,500', 'Cookie', 'Poppins:300,400,500,600'],
+      families: [
+        'Dancing+Script:400,500',
+        'Cookie',
+        'Bitter:300,400,500,600,700'
+      ],
       urls: [
         'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap',
         'https://fonts.googleapis.com/css2?family=Cookie&display=swap',
-        'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'
+        'https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&display=swap'
       ]
     }
   },

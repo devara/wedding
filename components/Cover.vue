@@ -18,7 +18,7 @@
           />
         </div>
         <h4 class="font-dancing text-xl md:text-2xl">The Wedding of</h4>
-        <h1 class="font-cookie text-5xl mb-4">Lisda & Deva</h1>
+        <h1 class="font-cookie text-6xl mb-4">Lisda & Deva</h1>
         <div class="mb-2">
           Hadir secara virtual melalui siaran langsung instagram:
         </div>
@@ -26,12 +26,12 @@
           class="rounded-md bg-pink-600 text-sm px-4 py-2 flex items-center"
           @click.prevent="toInstagram"
         >
-          <fa :icon="['fab', 'instagram']" />&nbsp;&nbsp;@lisdamei
+          <fa :icon="['fab', 'instagram']" />&nbsp;&nbsp;lisdamei
         </button>
 
         <h4 class="mt-8 subtitle-1">Kepada Bapak/Ibu/Saudara/i</h4>
         <h3
-          class="mt-4 pb-2 m-auto capitalize border-b w-full max-w-xs font-semibold"
+          class="mt-4 pb-2 m-auto capitalize border-b w-full max-w-xs font-semibold text-base"
         >
           {{ person }}
         </h3>
@@ -81,10 +81,10 @@ export default {
   mounted() {
     this.calculateHeight()
 
-    // const portrait = window.matchMedia('(orientation: portrait)')
-    // portrait.addEventListener('change', this.recalculateHeight, true)
+    const portrait = window.matchMedia('(orientation: portrait)')
+    portrait.addEventListener('change', this.recalculateHeight, true)
 
-    window.addEventListener('resize', this.recalculateHeight, true)
+    // window.addEventListener('resize', this.recalculateHeight, true)
   },
 
   methods: {

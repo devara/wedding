@@ -3,10 +3,10 @@
     <div
       class="flex flex-col gap-8 justify-center items-center mb-12 px-4 text-center"
     >
-      <div class="font-cookie text-5xl text-green-600">Wedding Gift</div>
+      <div class="font-cookie text-5xl text-yellow-800">Wedding Gift</div>
       <div class="font-medium w-4/5 md:w-2/5 mx-auto">
-        Bagi Keluarga dan Sahabat yang ingin mengirimkan hadiah, silakan
-        mengirimkannya melalui:
+        Bagi Keluarga maupun Sahabat apabila ingin mengirimkan hadiah kepada
+        kami, dapat mengirimkannya melalui:
       </div>
     </div>
     <div
@@ -18,15 +18,33 @@
         class="bg-white shadow-xl p-8 w-full lg:w-3/5 xl:w-2/5 text-center flex flex-col justify-center items-center gap-2 rounded-lg"
       >
         <nuxt-img :src="list.icon" loading="lazy" />
+        <span>No. Rekening: {{ list.norek }}</span>
         <span>Silakan transfer ke rekening a.n {{ list.person }}</span>
         <button
-          class="py-2 px-4 bg-dark-accent-primary text-dark-basic-primary rounded-md text-xs"
+          class="py-2 px-4 bg-yellow-800 text-dark-basic-primary rounded-md text-xs"
           @click.prevent="copyRek(i, list.norek)"
         >
           <fa :icon="['fas', 'copy']" />
           {{ list.text }}
         </button>
       </div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-4 py-8">
+      <div class="text-6xl text-pink-500">
+        <fa :icon="['fas', 'gift']" />
+      </div>
+      <div class="text-center px-4">
+        <b>Lisda Meilinda</b>
+        <br />
+        <span class="text-sm">{{ address }}</span>
+      </div>
+      <button
+        class="py-2 px-4 bg-dark-basic-strokes text-dark-basic-primary rounded-md text-xs"
+        @click.prevent="copyAlamat()"
+      >
+        <fa :icon="['fas', 'copy']" />
+        {{ addressLabel }}
+      </button>
     </div>
   </div>
 </template>
@@ -52,7 +70,10 @@ export default {
           norek: '9000045661361',
           text: 'Copy no Rekening'
         }
-      ]
+      ],
+      address:
+        'Kp. Leuweungkolot, Jl. Kelapa Dua No.50, RT.1 RW.3 Giri Mulya, Cibungbulang, Kab. Bogor',
+      addressLabel: 'Copy Alamat'
     }
   },
 
@@ -63,6 +84,15 @@ export default {
 
       setTimeout(() => {
         this.lists[index].text = 'Copy no Rekening'
+      }, 1500)
+    },
+
+    copyAlamat() {
+      navigator.clipboard.writeText(this.address)
+      this.addressLabel = 'Copied'
+
+      setTimeout(() => {
+        this.addressLabel = 'Copy Alamat'
       }, 1500)
     }
   }

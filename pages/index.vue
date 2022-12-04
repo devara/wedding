@@ -10,10 +10,11 @@
       <Gift />
       <Quotes />
       <Thankyou />
+      <Footer />
 
       <div class="z-40 fixed top-5 right-5">
         <div
-          class="flex justify-center items-center bg-red-500 text-dark-basic-primary w-10 h-10 md:h-12 md:w-12 rounded-full p-1 cursor-pointer"
+          class="flex justify-center items-center bg-yellow-800 text-dark-basic-primary w-10 h-10 md:h-12 md:w-12 rounded-full p-1 cursor-pointer"
           @click.prevent="play = !play"
         >
           <fa v-if="play" :icon="['fas', 'pause']" :size="`lg`" />
