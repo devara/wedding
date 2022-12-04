@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full flex flex-col justify-center bg-yellow-800 text-white text-center px-2 py-4 text-sm"
+    class="w-full flex flex-col justify-center bg-dark-background-main text-white text-center px-2 py-4 text-sm"
   >
     <div>
       ©2022 —

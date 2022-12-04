@@ -1,14 +1,14 @@
 <template>
-  <div class="w-full min-h-70vh bg-white py-20">
+  <div
+    class="w-full min-h-70vh bg-dark-background-main text-dark-basic-main py-24 font-lobster"
+  >
     <div
       class="flex flex-col gap-8 justify-center items-center mb-12 px-4 text-center"
     >
-      <div class="font-cookie text-5xl text-yellow-800">
-        Protokol Kesehatan & Anjuran
-      </div>
-      <div class="font-semibold">
+      <div class="font-cookie text-5xl">Protokol Kesehatan & Anjuran</div>
+      <div class="text-xl lg:text-2xl text-center md:w-4/5 lg:w-1/2">
         Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran Covid-19,
-        Maka diharapkan Bapak/Ibu/Saudara/Sahabat/i tamu undangan untuk :
+        maka diharapkan Bapak/Ibu/Saudara/Sahabat/i tamu undangan untuk :
       </div>
     </div>
 
@@ -19,18 +19,18 @@
         class="flex flex-col justify-around items-center gap-2 py-4 px-2 text-center"
       >
         <div
-          class="w-20 h-20 rounded-full inline-flex justify-center align-middle"
+          class="w-24 h-24 rounded-full inline-flex justify-center align-middle"
         >
           <nuxt-img
             class="rounded-full"
-            :src="`w_80/images/wedding/protocols/${list.icon}`"
+            :src="`w_96/images/wedding/protocols/${list.icon}`"
             loading="lazy"
           />
         </div>
-        <div class="font-bold text-base text-yellow-700">
+        <div class="font-bold text-lg">
           {{ list.title }}
         </div>
-        <div class="text-sm text-gray-600">{{ list.desc }}</div>
+        <div class="text-sm font-poppins">{{ list.desc }}</div>
       </div>
     </div>
   </div>

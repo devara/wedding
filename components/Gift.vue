@@ -1,16 +1,19 @@
 <template>
-  <div id="gift" class="min-h-70vh py-20">
+  <div
+    id="gift"
+    class="min-h-70vh py-20 font-lobster bg-dark-background-main text-dark-basic-main"
+  >
     <div
       class="flex flex-col gap-8 justify-center items-center mb-12 px-4 text-center"
     >
-      <div class="font-cookie text-5xl text-yellow-800">Wedding Gift</div>
-      <div class="font-medium w-4/5 md:w-2/5 mx-auto">
+      <div class="font-cookie text-5xl">Wedding Gift</div>
+      <div class="text-xl lg:text-2xl text-center md:w-4/5 lg:w-1/2">
         Bagi Keluarga maupun Sahabat apabila ingin mengirimkan hadiah kepada
         kami, dapat mengirimkannya melalui:
       </div>
     </div>
     <div
-      class="flex flex-col md:flex-row justify-center items-center gap-8 px-6 lg:px-12"
+      class="flex flex-col md:flex-row justify-center items-center gap-8 px-6 lg:px-12 font-poppins text-dark-background-main"
     >
       <div
         v-for="(list, i) in lists"
@@ -29,17 +32,17 @@
         </button>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-center gap-4 py-8">
+    <div class="flex flex-col items-center justify-center gap-4 mt-16">
       <div class="text-6xl text-pink-500">
         <fa :icon="['fas', 'gift']" />
       </div>
-      <div class="text-center px-4">
+      <div class="text-center px-4 text-xl lg:text-2xl">
         <b>Lisda Meilinda</b>
         <br />
-        <span class="text-sm">{{ address }}</span>
+        <span class="text-sm font-poppins font-medium">{{ address }}</span>
       </div>
       <button
-        class="py-2 px-4 bg-dark-basic-strokes text-dark-basic-primary rounded-md text-xs"
+        class="py-2 px-4 bg-yellow-800 text-dark-basic-primary rounded-md text-xs font-poppins"
         @click.prevent="copyAlamat()"
       >
         <fa :icon="['fas', 'copy']" />

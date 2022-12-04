@@ -17,7 +17,7 @@
             loading="lazy"
           />
         </div>
-        <h4 class="font-dancing text-xl md:text-2xl">The Wedding of</h4>
+        <h4 class="font-lobster text-xl md:text-2xl">The Wedding of</h4>
         <h1 class="font-cookie text-6xl mb-4">Lisda & Deva</h1>
         <div class="mb-2">
           Hadir secara virtual melalui siaran langsung instagram:
@@ -45,7 +45,7 @@
           @click.prevent="$emit('onOpen')"
         >
           <button
-            class="bg-dark-accent-primary text-dark-basic-primary rounded-md py-2 px-4 capitalize text-sm"
+            class="bg-yellow-800 text-dark-basic-primary rounded-md py-2 px-4 capitalize text-sm font-semibold"
           >
             <fa :icon="['fas', 'envelope-open']" />&nbsp;&nbsp;buka undangan
           </button>

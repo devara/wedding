@@ -1,23 +1,23 @@
 <template>
   <div id="event" class="w-full">
     <div
-      class="cover-event relative flex flex-col justify-center items-center gap-12 bg-cover bg-center min-h-70vh py-16"
+      class="cover-event relative flex flex-col justify-center items-center gap-12 bg-cover bg-center min-h-70vh py-24"
     >
       <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
       <div
         class="z-20 flex flex-col justify-center items-center w-full text-dark-basic-primary px-2 lg:px-6 text-center"
       >
-        <span class="text-2xl md:text-3xl tracking-widest text-yellow-600"
+        <span class="text-2xl md:text-3xl tracking-widest text-dark-basic-main"
           >بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span
         >
         <div class="font-cookie py-6 text-5xl">
           Akad Nikah dan Syukuran Pernikahan
         </div>
-        <span class="text-sm md:text-base font-medium"
-          >INSHA ALLAH AKAN DISELENGGARAKAN PADA:</span
+        <span class="text-lg md:text-2xl font-bold font-lobster"
+          >Insha Allah akan diselenggarakan pada:</span
         >
         <div
-          class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6"
+          class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6 font-lobster"
         >
           <div
             v-for="(list, i) in eventList"
@@ -25,7 +25,7 @@
             class="w-80 md:w-1/2 lg:w-96 bg-white bg-opacity-10 border-2 border-solid border-white rounded-t-100% px-4 py-8 md:px-8 md:py-8 flex flex-col justify-center items-center"
           >
             <h3
-              class="w-4/5 mx-auto pb-4 mb-4 text-center border-b border-solid font-bold"
+              class="w-4/5 mx-auto pb-4 mb-4 text-center border-b border-solid font-bold capitalize text-2xl"
             >
               {{ list.title }}
             </h3>
@@ -33,7 +33,7 @@
               <div
                 v-for="(detail, ind) in list.details"
                 :key="ind"
-                class="flex flex-row items-center gap-4 text-sm md:text-base"
+                class="flex flex-row items-center gap-4 text-base md:text-lg"
               >
                 <fa :icon="detail.icon" />
                 <span class="mr-2">{{ detail.desc }}</span>
@@ -54,7 +54,7 @@
       <div
         class="z-20 text-white px-4 text-center flex flex-col justify-center items-center gap-2"
       >
-        <div>
+        <div class="font-lobster text-lg">
           Anda juga dapat menghadiri acara pernikahan kami secara virtual
           melalui
         </div>
@@ -77,7 +77,7 @@ export default {
     return {
       eventList: [
         {
-          title: 'AKAD NIKAH',
+          title: 'akad nikah',
           details: [
             {
               icon: ['fas', 'clock'],
@@ -95,7 +95,7 @@ export default {
           ]
         },
         {
-          title: 'RESEPSI',
+          title: 'resepsi',
           details: [
             {
               icon: ['fas', 'clock'],

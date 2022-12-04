@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dancing: ['Dancing Script', 'cursive'],
         cookie: ['Cookie', 'cursive'],
-        poppins: ['Bitter', 'serif']
+        poppins: ['Bitter', 'serif'],
+        lobster: ['Lobster Two', 'cursive']
       },
       fontSize: {
         '2rem': [
@@ -26,13 +26,15 @@ module.exports = {
             primary: '#16162A',
             secondary: '#292946',
             thriary: '#494980',
-            contrast: '#EAEAFF'
+            contrast: '#EAEAFF',
+            main: '#292927'
           },
           basic: {
             primary: '#F3F3F3',
             secondary: '#8E8EA3',
             thriary: '#818191',
-            strokes: '#52526B'
+            strokes: '#52526B',
+            main: '#DD9626'
           },
           accent: {
             primary: '#5C7AE5',
@@ -46,7 +48,8 @@ module.exports = {
             primary: '#F3F3F3',
             secondary: '#8E8EA3',
             thriary: '#818191',
-            strokes: '#52526B'
+            strokes: '#52526B',
+            main: '#DD9626'
           },
           accent: {
             primary: '#5C7AE5'

@@ -1,7 +1,7 @@
 <template>
   <div class="z-40 fixed top-1/3 right-0">
     <div
-      class="py-2 px-2 bg-gray-400 shadow-xl rounded-tl-lg rounded-bl-lg flex flex-col justify-center items-center gap-2 text-dark-basic-primary"
+      class="py-2 px-2 bg-yellow-800 shadow-xl rounded-tl-lg rounded-bl-lg flex flex-col justify-center items-center gap-2 text-dark-basic-primary"
     >
       <div
         v-for="(nav, i) in navs"
