@@ -72,7 +72,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://product-gallery.cloudinary.com/all.js'
+        src: 'https://product-gallery.cloudinary.com/1.0.34/all.js'
       }
     ]
   },

@@ -18,7 +18,7 @@
           />
         </div>
         <h4 class="font-lobster text-xl md:text-2xl">The Wedding of</h4>
-        <h1 class="font-cookie text-6xl mb-4">Lisda & Deva</h1>
+        <h1 class="font-cookie text-6xl lg:text-7xl mb-4">Lisda & Deva</h1>
         <div class="mb-2">
           Hadir secara virtual melalui siaran langsung instagram:
         </div>
@@ -29,9 +29,11 @@
           <fa :icon="['fab', 'instagram']" />&nbsp;&nbsp;lisdamei
         </button>
 
-        <h4 class="mt-8 subtitle-1">Kepada Bapak/Ibu/Saudara/i</h4>
+        <h4 class="mt-8 text-sm md:text-base">
+          Kepada Bapak/Ibu/Saudara/Sahabat/i
+        </h4>
         <h3
-          class="mt-4 pb-2 m-auto capitalize border-b w-full max-w-xs font-semibold text-base"
+          class="mt-4 pb-2 m-auto capitalize border-b w-full max-w-xs font-bold text-base"
         >
           {{ person }}
         </h3>
