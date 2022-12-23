@@ -19,15 +19,6 @@
         </div>
         <h4 class="font-lobster text-xl md:text-2xl">The Wedding of</h4>
         <h1 class="font-cookie text-6xl lg:text-7xl mb-4">Lisda & Deva</h1>
-        <div class="mb-2">
-          Hadir secara virtual melalui siaran langsung instagram:
-        </div>
-        <button
-          class="rounded-md bg-pink-600 text-sm px-4 py-2 flex items-center"
-          @click.prevent="toInstagram"
-        >
-          <fa :icon="['fab', 'instagram']" />&nbsp;&nbsp;lisdamei
-        </button>
 
         <h4 class="mt-8 text-sm md:text-base">
           Kepada Bapak/Ibu/Saudara/Sahabat/i

@@ -32,7 +32,7 @@
         </div>
         <div class="flex items-center justify-center w-full my-4">
           <div class="border-t border-solid border-dark-basic-main w-8"></div>
-          <div class="mx-2">Calon Mempelai {{ pengantin.gender }}</div>
+          <div class="mx-2">Mempelai {{ pengantin.gender }}</div>
           <div class="border-t border-solid border-dark-basic-main w-8"></div>
         </div>
         <p>{{ pengantin.parent }}</p>
