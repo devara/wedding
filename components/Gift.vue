@@ -32,21 +32,25 @@
         </button>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-center px-6 mt-16">
+    <div
+      class="flex flex-col md:flex-row gap-8 items-center justify-center px-6 mt-16"
+    >
       <div
+        v-for="(gift, i) in gifts"
+        :key="i"
         class="bg-white shadow-xl flex flex-col justify-center items-center gap-2 p-8 w-full lg:w-3/5 xl:w-2/5 text-center rounded-lg"
       >
         <div class="text-6xl text-yellow-800">
           <fa :icon="['fas', 'gift']" />
         </div>
-        <span class="px-4 text-xl lg:text-2xl">Lisda Meilinda</span>
-        <span class="text-sm font-poppins font-medium">{{ address }}</span>
+        <span class="px-4 text-xl lg:text-2xl">{{ gift.person }}</span>
+        <span class="text-sm font-poppins font-medium">{{ gift.address }}</span>
         <button
           class="py-2 px-4 bg-yellow-800 text-dark-basic-primary rounded-md text-xs font-poppins"
-          @click.prevent="copyAlamat()"
+          @click.prevent="copyAlamat(i, gift.address)"
         >
-          <fa :icon="['fas', 'copy']" />
-          {{ addressLabel }}
+          <fa :icon="gift.icon" />
+          {{ gift.text }}
         </button>
       </div>
     </div>
@@ -75,6 +79,24 @@ export default {
           text: 'Copy no Rekening'
         }
       ],
+      gifts: [
+        {
+          name: 'Gift Lisda',
+          icon: ['fas', 'gift'],
+          person: 'Lisda Meilinda',
+          address:
+            'Kp. Leuweungkolot, Jl. Kelapa Dua No.50, RT.1 RW.3 Giri Mulya, Cibungbulang, Kab. Bogor',
+          text: 'Copy Alamat'
+        },
+        {
+          name: 'Gift Deva',
+          icon: ['fas', 'gift'],
+          person: 'Devara Eko K M',
+          address:
+            'Gg Podang no. 231 Pasekan RT.07 RW.40 Maguwoharjo, Depok, Kab. Sleman (maps ke Pawon Maguwo)',
+          text: 'Copy Alamat'
+        }
+      ],
       address:
         'Kp. Leuweungkolot, Jl. Kelapa Dua No.50, RT.1 RW.3 Giri Mulya, Cibungbulang, Kab. Bogor',
       addressLabel: 'Copy Alamat'
@@ -91,12 +113,12 @@ export default {
       }, 1500)
     },
 
-    copyAlamat() {
-      navigator.clipboard.writeText(this.address)
-      this.addressLabel = 'Copied'
+    copyAlamat(index, value) {
+      navigator.clipboard.writeText(value)
+      this.gifts[index].text = 'Copied'
 
       setTimeout(() => {
-        this.addressLabel = 'Copy Alamat'
+        this.gifts[index].text = 'Copy Alamat'
       }, 1500)
     }
   }

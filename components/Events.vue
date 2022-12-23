@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div id="event" class="w-full">
     <div
@@ -17,7 +18,7 @@
           >Insha Allah akan diselenggarakan pada:</span
         >
         <div
-          class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6 font-lobster"
+          class="flex flex-col flex-wrap md:flex-row justify-center items-center gap-8 mt-6 font-lobster"
         >
           <div
             v-for="(list, i) in eventList"
@@ -26,9 +27,8 @@
           >
             <h3
               class="w-4/5 mx-auto pb-4 mb-4 text-center border-b border-solid font-bold capitalize text-2xl"
-            >
-              {{ list.title }}
-            </h3>
+              v-html="list.title"
+            />
             <div class="flex flex-col gap-2">
               <div
                 v-for="(detail, ind) in list.details"
@@ -47,11 +47,11 @@
           class="py-2 px-4 bg-yellow-800 rounded-md"
           @click.prevent="toLocation"
         >
-          Menuju lokasi Pernikahan &nbsp;
+          Menuju lokasi Acara &nbsp;
           <fa :icon="['fas', 'map-location-dot']" />
         </button>
       </div>
-      <div
+      <!-- <div
         class="z-20 text-white px-4 text-center flex flex-col justify-center items-center gap-2"
       >
         <div class="font-lobster text-lg">
@@ -64,7 +64,7 @@
         >
           <fa :icon="['fab', 'instagram']" />&nbsp;&nbsp;lisdamei
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
     return {
       eventList: [
         {
-          title: 'akad nikah',
+          title: 'akad nikah <br>(telah terlaksana)',
           details: [
             {
               icon: ['fas', 'clock'],
@@ -95,7 +95,7 @@ export default {
           ]
         },
         {
-          title: 'resepsi',
+          title: 'resepsi<br>(telah terlaksana)',
           details: [
             {
               icon: ['fas', 'clock'],
@@ -110,6 +110,23 @@ export default {
               desc: 'Kediaman mempelai wanita'
             }
           ]
+        },
+        {
+          title: 'syukuran & doa bersama',
+          details: [
+            {
+              icon: ['fas', 'clock'],
+              desc: '13.00 WIB - selesai'
+            },
+            {
+              icon: ['fas', 'calendar'],
+              desc: 'Sabtu, 07 Januari 2023'
+            },
+            {
+              icon: ['fas', 'location-dot'],
+              desc: 'Kediaman mempelai laki-laki'
+            }
+          ]
         }
       ]
     }
@@ -117,7 +134,7 @@ export default {
 
   methods: {
     toLocation() {
-      window.open('https://goo.gl/maps/hFTYUvkkgPB7TUG26', '_blank')
+      window.open('https://goo.gl/maps/uUJofNYyVmLJWz8N9', '_blank')
     },
 
     toInstagram() {
