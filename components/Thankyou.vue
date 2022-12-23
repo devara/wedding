@@ -1,9 +1,9 @@
 <template>
   <div class="w-full font-lobster">
     <div
-      class="cover-footer relative flex justify-center items-center bg-cover bg-center min-h-70vh"
+      class="cover-footer relative flex flex-col gap-20 justify-center items-center bg-cover bg-center min-h-70vh"
     >
-      <div class="z-10 absolute inset-0 bg-black bg-opacity-40"></div>
+      <div class="z-10 absolute inset-0 bg-black bg-opacity-60"></div>
 
       <div
         class="z-20 flex flex-col justify-center items-center gap-4 text-dark-basic-primary text-center"
@@ -17,12 +17,37 @@
           Wassalamu'alaikum Wr. Wb.
         </div>
       </div>
+      <div class="z-20 text-center text-white text-base lg:text-xl px-2 pb-6">
+        <div class="mb-4">Kami yang berbahagia,</div>
+        <div class="flex flex-row gap-8 lg:gap-16 justify-center items-center">
+          <div v-for="(fam, i) in fams" :key="i">
+            <span>{{ `Kel. Bpk. ${fam.ayah} & Ibu ${fam.ibu}` }}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VThankyou'
+  name: 'VThankyou',
+
+  computed: {
+    fams() {
+      return [
+        {
+          name: 'Deva',
+          ibu: 'Sumilah',
+          ayah: 'Sungkawa'
+        },
+        {
+          name: 'Lisda',
+          ibu: 'Warsiati',
+          ayah: 'Samsudin'
+        }
+      ]
+    }
+  }
 }
 </script>

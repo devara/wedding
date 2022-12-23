@@ -80,14 +80,14 @@ export default {
         }
       ],
       gifts: [
-        {
-          name: 'Gift Lisda',
-          icon: ['fas', 'gift'],
-          person: 'Lisda Meilinda',
-          address:
-            'Kp. Leuweungkolot, Jl. Kelapa Dua No.50, RT.1 RW.3 Giri Mulya, Cibungbulang, Kab. Bogor',
-          text: 'Copy Alamat'
-        },
+        // {
+        //   name: 'Gift Lisda',
+        //   icon: ['fas', 'gift'],
+        //   person: 'Lisda Meilinda',
+        //   address:
+        //     'Kp. Leuweungkolot, Jl. Kelapa Dua No.50, RT.1 RW.3 Giri Mulya, Cibungbulang, Kab. Bogor',
+        //   text: 'Copy Alamat'
+        // },
         {
           name: 'Gift Deva',
           icon: ['fas', 'gift'],
